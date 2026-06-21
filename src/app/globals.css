@@ -1,26 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fcf9f2; /* Warm Cream */
+  --foreground: #2d2a26; /* Dark Charcoal */
+  
+  --color-terracotta-50: #fdf5f2;
+  --color-terracotta-100: #faebe5;
+  --color-terracotta-500: #c96540;
+  --color-terracotta-600: #b34d26;
+  --color-terracotta-700: #8c3b1d;
+  
+  --color-olive-50: #f4f6f0;
+  --color-olive-100: #e8ede1;
+  --color-olive-500: #596c3d;
+  --color-olive-600: #42522c;
+  
+  --color-gold-300: #ecd280;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #bfa030;
+  
+  --color-cream: #fcf9f2;
+  --color-beige: #f5efe0;
 }
 
-@theme inline {
+.dark {
+  --background: #141412; /* Very dark beige/charcoal */
+  --foreground: #f4eae1; /* Light cream */
+}
+
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  --color-terracotta-50: var(--color-terracotta-50);
+  --color-terracotta-100: var(--color-terracotta-100);
+  --color-terracotta-500: var(--color-terracotta-500);
+  --color-terracotta-600: var(--color-terracotta-600);
+  --color-terracotta-700: var(--color-terracotta-700);
+  
+  --color-olive-50: var(--color-olive-50);
+  --color-olive-100: var(--color-olive-100);
+  --color-olive-500: var(--color-olive-500);
+  --color-olive-600: var(--color-olive-600);
+  
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-600: var(--color-gold-600);
+  
+  --color-cream: var(--color-cream);
+  --color-beige: var(--color-beige);
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', 'Inter', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-terracotta-500);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta-600);
 }
